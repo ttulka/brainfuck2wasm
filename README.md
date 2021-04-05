@@ -6,11 +6,11 @@
 
 ```sh
 # install:
+$ npm install brainfuck2wasm -g
+
+# from source code:
 $ npm install
 $ npm link
-
-# alternatively:
-$ npm install brainfuck2wasm -g
 
 # write some brainfuck code:
 $ echo ">,[>,]<[.<]" > reverse.b
