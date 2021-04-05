@@ -1,6 +1,6 @@
 {
   "name": "brainfuck2wasm",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Binaryen based compiler from brainfuck to WebAssembly (Wasm).",
   "type": "module",
   "main": "src/index.js",
