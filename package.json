@@ -1,0 +1,20 @@
+{
+  "name": "brainfuck2wasm",
+  "version": "1.0.0",
+  "description": "Binaryen compiler from brainfuck to WebAssembly.",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": "bin/brainfuck2wasm.mjs",
+  "scripts": {},
+  "keywords": [
+    "binaryen",
+    "brainfuck",
+    "compiler",
+    "webassembly"
+  ],
+  "author": "Tomas Tulka (ttulka)",
+  "license": "MIT",
+  "dependencies": {
+    "binaryen": "^100.0.0"
+  }
+}
