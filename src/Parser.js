@@ -48,9 +48,9 @@ export default class Parser {
 
       } else {
         let eliminated = false;
-        if (branch.children.length) {
+        if (branch.children.length && kind !== '.' && kind !== ',') {
           const last = branch.children[branch.children.length - 1];
-          if (last.kind === cmd.kind) {
+          if (last.kind === kind) {
             last.amount++;
             eliminated = true;
           }
