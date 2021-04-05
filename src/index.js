@@ -19,10 +19,10 @@ export function main(args) {
   fs.writeFileSync(`${moduleName}.wasm`, binary);
 }
 
-function compile(input, moduleName) {
+function compile(input) {
   const parser = new Parser();
   const ast = parser.parse(input);
 
   const compiler = new Compiler();
-  return compiler.compile(ast, moduleName);
+  return compiler.compile(ast);
 }

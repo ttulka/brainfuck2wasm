@@ -39,41 +39,41 @@ export default class Compiler {
   compileBranch(branch) {
     const body = [];
     branch.children.forEach(cmd => {
-        let c;
-        switch (cmd.kind) {
-          case '+':
-            c = this.increment(cmd.amount);
-            body.push(c);
-            break;
-          case '-':
-            c = this.decrement(cmd.amount);
-            body.push(c);
-            break;
-          case '>':
-            c = this.moveRight(cmd.amount);
-            body.push(c);
-            break;
-          case '<':
-            c = this.moveLeft(cmd.amount);
-            body.push(c);
-            break;
-          case '.':
-            c = this.output();
-            body.push(c);
-            break;
-          case ',':
-            c = this.input();
-            body.push(c);
-            break;
-          case 'loop':
-            c = this.loop(cmd, this.loopIdx++);
-            body.push(c);
-            break;
-          case '#':
-            c = this.debug();
-            body.push(c);
-            break;
-        }
+      let c;
+      switch (cmd.kind) {
+        case '+':
+          c = this.increment(cmd.amount);
+          body.push(c);
+          break;
+        case '-':
+          c = this.decrement(cmd.amount);
+          body.push(c);
+          break;
+        case '>':
+          c = this.moveRight(cmd.amount);
+          body.push(c);
+          break;
+        case '<':
+          c = this.moveLeft(cmd.amount);
+          body.push(c);
+          break;
+        case '.':
+          c = this.output();
+          body.push(c);
+          break;
+        case ',':
+          c = this.input();
+          body.push(c);
+          break;
+        case 'loop':
+          c = this.loop(cmd, this.loopIdx++);
+          body.push(c);
+          break;
+        case '#':
+          c = this.debug();
+          body.push(c);
+          break;
+      }
     });
     return body;
   }
@@ -123,9 +123,10 @@ export default class Compiler {
   }
 
   loop(branch, idx) {
-    const label = 'l' + idx;
     const commands = this.compileBranch(branch);
 
+    const label = 'l' + idx;
+    
     const p = this.module.global.get('p', binaryen.i32);
     const val = this.module.i32.load8_u(0, 1, p);
     const br = this.module.br_if(label, val);
