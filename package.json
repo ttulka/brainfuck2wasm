@@ -1,19 +1,25 @@
 {
   "name": "brainfuck2wasm",
-  "version": "1.0.0",
-  "description": "Binaryen compiler from brainfuck to WebAssembly.",
+  "version": "0.1.0",
+  "description": "Binaryen based compiler from brainfuck to WebAssembly (Wasm).",
   "type": "module",
   "main": "src/index.js",
   "bin": "bin/brainfuck2wasm.mjs",
   "scripts": {},
   "keywords": [
-    "binaryen",
     "brainfuck",
     "compiler",
-    "webassembly"
+    "webassembly",
+    "wasm",
+    "binaryen"
   ],
   "author": "Tomas Tulka (ttulka)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ttulka/brainfuck2wasm.git"
+  },
+  "homepage": "https://github.com/ttulka/brainfuck2wasm#readme",
   "dependencies": {
     "binaryen": "^100.0.0"
   }
